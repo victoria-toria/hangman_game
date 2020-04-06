@@ -9,7 +9,7 @@ h1 {
   color: red;
 }
 
-.front_page {
+.frontPage {
   width: 90%;
   height: 550px;
   border: double;
@@ -19,7 +19,7 @@ h1 {
   align-items: center;
 }
 
-.FP_design {
+.FPDesign {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,14 +35,16 @@ h1 {
   border: double;
 }
 
-.hidden_word {
+.hiddenWord {
   border: double;
 }
 
 .alphabet {
+  display: flex;
+  flex-wrap: wrap;
   border: double;
 }
-.game_page {
+.gamePage {
   width: 90%;
   height: 550px;
   border: double;
@@ -52,7 +54,7 @@ h1 {
   align-items: center;
 }
 
-.game_area {
+.gameArea {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -60,7 +62,7 @@ h1 {
   border: double;
 }
 
-.game_field {
+.gameField {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -68,7 +70,7 @@ h1 {
   border: double;
 }
 
-.final_page {
+.finalPage {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -76,7 +78,7 @@ h1 {
   border: double;
 }
 
-.final_page_win {
+.finalPageWin {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -86,7 +88,7 @@ h1 {
   border: double;
 }
 
-.final_page_lose {
+.finalPageLose {
   display: flex;
   flex-direction: column;
   justify-content: center;
