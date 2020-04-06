@@ -1,8 +1,9 @@
 PRD
-Project containes 3 stages:
+Project containes 4 stages:
 1. Game 
 2. Front page
-3. Final page
+3. Final page1win
+4. Final page2lose
 
 Prototype: https://app.moqups.com/LL9rwByKMg/view/page/a9de4d023
 
