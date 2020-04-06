@@ -1,0 +1,97 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: red;
+}
+
+.front_page {
+  width: 90%;
+  height: 550px;
+  border: double;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.FP_design {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: double;
+}
+/* .game_page{
+    width: 90%;
+    height: 550px;  
+} */
+
+.hangman {
+  border: double;
+}
+
+.hidden_word {
+  border: double;
+}
+
+.alphabet {
+  border: double;
+}
+.game_page {
+  width: 90%;
+  height: 550px;
+  border: double;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game_area {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: double;
+}
+
+.game_field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: double;
+}
+
+.final_page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: double;
+}
+
+.final_page_win {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 550px;
+  border: double;
+}
+
+.final_page_lose {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 550px;
+  border: double;
+}
