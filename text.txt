@@ -1,0 +1,26 @@
+PRD
+Project containes 3 stages:
+1. Game 
+2. Front page
+3. Final page
+
+Prototype: https://app.moqups.com/LL9rwByKMg/view/page/a9de4d023
+
+User flow (extended): 
+- User loads the game (from a link), and lands of the front page. 
+- Front pages containes name of the game, an image of hangman, Play button.
+- User can only click "Play" button, either close the game in the browser.
+-  When clicking "Play" button, user lands on the game's page.
+-  The game's page containes: (P0)1. Area where the hanman will be built. (P0)2.Area a # of square placeholdes, representing a word user have to guess. (P0)3. Area where user types a letter (same area where all chosen letters are displayed). (P1)4.3 mins timer. When user lands on the game's page timer automatically starts. When timer hits 3 mins - game ends, if user havent guessed the word.
+- User flow from games page: 1. Exit the game by closing the browser. 2. moving to the final page when lost/won/timeout.
+-  On the game page user can click inside the "Type your letter" box and type any letter. (P2) Only english letters are allowed. When typing in a character or a letter from the different to latin alphabet display an error msg. 
+- All leters used by the user will be displayed on the page. Allow reuse of a letter. Reuse will lead to a fail.
+- Each fail try leads to a new feature of hangman dispayed. In total user has only 7 fail tries. 7th fail try will bring user to the fail final page.
+- If user guessing the word correctly before the time runs out or before the 7 fail trys - user lands on the win final page.
+- Final page has 2 versions - fail and win. Both versions contain a text, an image and the button "start again" (restart the game. same functionallity that the button on the front page).
+
+MVP:
+- Front page: 1.Text - static; 2. Img - static; 3. Play btn - static;
+- Game page: 1. Hangman area - static, 2. Hidden word (1 variation), 3. Used words area. 4. Type a letter box(any letter, character, fail when not correct)
+- Final page1win: 1.Text - static; 2. Img - static; 3. Play again btn - static;
+- Final page2lose: 1.Text - static; 2. Img - static; 3. Play again btn - static;
