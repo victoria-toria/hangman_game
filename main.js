@@ -1,12 +1,9 @@
 //Game area. Alphabet btns
 
 let alphabetDiv = document.querySelector(".alphabet");
-let btns = document.querySelectorAll("button");
-let word = document.querySelector(".hiddenWord");
+let wordDiv = document.querySelector(".hiddenWord");
+let guessWord = "JAVASCRIPT";
 let lives = 7;
-
-const allButtons = Array.from(btns);
-console.log(allButtons);
 
 let alphaArr = [
   "A",
@@ -48,54 +45,42 @@ alphaArr.forEach((letter) => {
 });
 console.log(alphabetDiv);
 
+let btns = alphabetDiv.querySelectorAll("button");
+console.log(btns);
+
 ////Hidden word
 
-function createHiddenWd(word) {
-  let letterHiddenWord = word.split("");
+function createHiddenWd() {
+  let letterHiddenWord = guessWord.toString().split("");
   let spanArr = letterHiddenWord.map(function (el) {
-    return "<span>" + el + "</span>";
+    return `<span class="ltr">${el}</span>`;
+    // return `<span class="letter ${el}">${el}</span>`;
   });
   let str = spanArr.join("");
   console.log(str);
   document.querySelector(".hiddenWord").innerHTML = str;
 }
-createHiddenWd("javascript");
-
-//Initial value of alphabet and hidden word
-let state = {
-  btns: false,
-  word: false,
-};
-console.log("hey");
-console.log("banana");
+createHiddenWd(guessWord);
 
 //Buttons onclick event
-allButtons.forEach((btn) => {
-  btn.addEventListener("onclick", () => {
-    console.log("hey");
+btns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    btn.classList.add("active");
+    if (checkIfContains(btn.innerText)) {
+    }
+    console.log("hey", lives, btn.innerText);
   });
 });
 
-function addRemoveActive(button, state) {
-  if (state) {
-    button.classList.add("active");
-  } else {
-    button.classList.remove("active");
-  }
-}
-
 let guess;
-let testWord = "word";
-let testLetter1 = "w";
-let testLetter2 = "a";
-function checkIfContains() {
-  for (let i = 0; i < testWord.length; i++) {
-    //   if (testWord[i].localeCompare(alphabetDiv[j])) {
-    if (testWord[i] == testLetter1) {
+
+function checkIfContains(letter) {
+  for (let i = 0; i < guessWord.length; i++) {
+    if (guessWord[i] == letter) {
+      guessWord[i].classList.remove("ltr");
       guess = true;
+      console.log(guess, "guess");
       lives;
-      console.log("Yay!");
-      //   word(i).style.visibility = "visible"
     } else {
       guess = false;
       lives--;
@@ -103,16 +88,6 @@ function checkIfContains() {
     }
   }
 }
-
-checkIfContains(testLetter1);
-
-//function render hidden word
-
-// function renderHiddenWord(word) {
-//   for (i = 0; i < word.length; i++)//       word(i).style.visibility = "hidden";
-//     }
-//   }
-// }
 
 ///Onclick change color
 

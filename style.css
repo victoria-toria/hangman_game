@@ -98,8 +98,12 @@ h1 {
   border: double;
 }
 
-.btn:active {
+.active {
   color: red;
   top: 5px;
   box-shadow: none;
+}
+
+.ltr {
+  visibility: hidden;
 }
