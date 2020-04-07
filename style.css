@@ -97,3 +97,9 @@ h1 {
   height: 550px;
   border: double;
 }
+
+.btn:active {
+  color: red;
+  top: 5px;
+  box-shadow: none;
+}
