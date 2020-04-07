@@ -85,8 +85,8 @@ function addRemoveActive(button, state) {
 
 //=> need to get to word(i)
 function checkIfContains() {
-  for (let i = 0; i < alphabetDiv.length; i++) {
-    for (let j = 0; j < word.length; j++) {
+  for (let i = 0; i < word.length; i++) {
+    for (let j = 0; j < alphabetDiv.length; j++) {
       if (i === j) {
         console.log("yep");
         //   word(i).style.visibility = "visible"
