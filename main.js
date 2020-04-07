@@ -85,31 +85,31 @@ function addRemoveActive(button, state) {
 }
 
 let guess;
+let testWord = "word";
+let testLetter1 = "w";
+let testLetter2 = "a";
 function checkIfContains() {
-  for (let i = 0; i < word.length; i++) {
-    for (let j = 0; j < alphabetDiv.length; j++) {
-      if (word[i] == alphabetDiv[j]) {
-        guess = true;
-        lives;
-        //   word(i).style.visibility = "visible"
-      } else {
-        guess = false;
-        lives--;
-        //   word(i).style.visibility = "hidden"
-      }
+  for (let i = 0; i < testWord.length; i++) {
+    //   if (testWord[i].localeCompare(alphabetDiv[j])) {
+    if (testWord[i] == testLetter1) {
+      guess = true;
+      lives;
+      console.log("Yay!");
+      //   word(i).style.visibility = "visible"
+    } else {
+      guess = false;
+      lives--;
+      //   word(i).style.visibility = "hidden"
     }
   }
 }
-checkIfContains();
+
+checkIfContains(testLetter1);
 
 //function render hidden word
 
 // function renderHiddenWord(word) {
-//   for (i = 0; i < word.length; i++) {
-//     if (true) {
-//       word(i).style.visibility = "visible";
-//     } else {
-//       word(i).style.visibility = "hidden";
+//   for (i = 0; i < word.length; i++)//       word(i).style.visibility = "hidden";
 //     }
 //   }
 // }
