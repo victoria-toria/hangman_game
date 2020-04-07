@@ -3,6 +3,7 @@
 let alphabetDiv = document.querySelector(".alphabet");
 let btns = document.querySelectorAll("button");
 let word = document.querySelector(".hiddenWord");
+let lives = 7;
 
 const allButtons = Array.from(btns);
 console.log(allButtons);
@@ -83,15 +84,17 @@ function addRemoveActive(button, state) {
   }
 }
 
-//=> need to get to word(i)
+let guess;
 function checkIfContains() {
   for (let i = 0; i < word.length; i++) {
     for (let j = 0; j < alphabetDiv.length; j++) {
-      if (i === j) {
-        console.log("yep");
+      if (word[i] == alphabetDiv[j]) {
+        guess = true;
+        lives;
         //   word(i).style.visibility = "visible"
       } else {
-        console.log("nope");
+        guess = false;
+        lives--;
         //   word(i).style.visibility = "hidden"
       }
     }
