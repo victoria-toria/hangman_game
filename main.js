@@ -34,6 +34,8 @@ let alphaArr = [
   "Z",
 ];
 
+let letter = "";
+
 function createBtn(letter) {
   let btn = document.createElement("button");
   btn.innerText = letter;
@@ -52,41 +54,62 @@ console.log(btns);
 
 function createHiddenWd() {
   let letterHiddenWord = guessWord.toString().split("");
-  let spanArr = letterHiddenWord.map(function (el) {
-    return `<span class="ltr">${el}</span>`;
+  console.log(letterHiddenWord);
+  letterHiddenWord.forEach(function (el) {
+    let spanLetter = document.createElement("span");
+    spanLetter.innerText = el;
+    spanLetter.classList.add("ltr");
+    spanLetter.setAttribute("id", el);
+    wordDiv.appendChild(spanLetter);
+    //return `<span class="ltr">${el}</span>`;
     // return `<span class="letter ${el}">${el}</span>`;
   });
-  let str = spanArr.join("");
-  console.log(str);
-  document.querySelector(".hiddenWord").innerHTML = str;
+  //let str = spanArr.join("");
+  //document.querySelector(".hiddenWord").innerHTML = str;
+  //console.log(str);
 }
+
 createHiddenWd(guessWord);
+
+//guessWord to letters
 
 //Buttons onclick event
 btns.forEach((btn) => {
   btn.addEventListener("click", () => {
     btn.classList.add("active");
-    if (checkIfContains(btn.innerText)) {
-    }
-    console.log("hey", lives, btn.innerText);
+    checkIfContains(btn.innerText);
+    console.log("hey", btn.innerText);
   });
 });
 
 let guess;
 
 function checkIfContains(letter) {
-  for (let i = 0; i < guessWord.length; i++) {
-    if (guessWord[i] == letter) {
-      guessWord[i].classList.remove("ltr");
+  guessWord.split("").forEach((elem) => {
+    if (elem == letter) {
+      document.getElementById(letter).classList.remove("ltr");
+      console.log(elem, letter);
       guess = true;
-      console.log(guess, "guess");
+      console.log(elem, guess, "guess");
       lives;
     } else {
       guess = false;
+      console.log(elem, guess, "guess");
       lives--;
-      //   word(i).style.visibility = "hidden"
     }
-  }
+  });
+  //   for (let i = 0; i < guessWord.length; i++) {
+  //     if (guessWord[i] == letter) {
+  //         let spanLetter = document.getElementById(letter);
+  //         console.log(spanLetter)
+  //         spanLetter.classList.remove("ltr");
+  //       guess = true;
+  //       console.log(guessWord[i], guess, "guess");
+  //       lives;
+  //     } else guess = false;
+  //     console.log(guessWord[i], guess, "guess");
+  //     lives--;
+  //   }
 }
 
 ///Onclick change color

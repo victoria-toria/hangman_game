@@ -103,7 +103,9 @@ h1 {
   top: 5px;
   box-shadow: none;
 }
-
+.visible {
+  visibility: visible;
+}
 .ltr {
   visibility: hidden;
 }
