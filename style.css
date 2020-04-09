@@ -3,6 +3,19 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  font-family: "Acme";
+  text-align: center;
+  font-size: 30px;
+  background-color: #f0c8c8;
+  /* background: #404040;
+  background-image: url(http://i.stack.imgur.com/TEBeF.gif);
+  font-family: "Mr Dafoe", cursive, "Baskerville Old Face", "Goudy Old Style",
+    Garamond, "Times New Roman", serif;
+  color: #eb219b;
+  height: 100%;
+  text-align: center;
+  font-size: 24px; */
 }
 
 h1 {
@@ -33,20 +46,32 @@ h1 {
 
 .hangman {
   border: double;
+  height: 400px;
+  width: 300px;
 }
 
 .hiddenWord {
-  border: double;
+  width: 500px;
+  height: 50 px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .alphabet {
   display: flex;
   flex-wrap: wrap;
-  border: double;
+  margin: 50px 50px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 300px;
 }
+.alphabet > * {
+  flex: 0 0 20%;
+}
+
 .gamePage {
-  width: 90%;
-  height: 550px;
+  /* width: 90%;
+  height: 550px; */
   border: double;
   display: flex;
   flex-direction: column;
@@ -65,9 +90,7 @@ h1 {
 .gameField {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  border: double;
 }
 
 .finalPage {
@@ -79,6 +102,7 @@ h1 {
 }
 
 .finalPageWin {
+  background-image: url("./images/90066.jpg");
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -103,9 +127,14 @@ h1 {
   top: 5px;
   box-shadow: none;
 }
-.visible {
-  visibility: visible;
-}
+
 .ltr {
   visibility: hidden;
+}
+span {
+  border: double;
+}
+
+#wrapper div span {
+  height: 100px;
 }
