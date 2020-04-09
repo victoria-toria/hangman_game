@@ -5,8 +5,8 @@ let wordDiv = document.querySelector(".hiddenWord");
 let guessWord = "JAVASCRIPT";
 let guessWordLength = guessWord.length;
 console.log(guessWordLength);
-let lives;
-
+let lifes;
+document.getElementsByClassName("hangman")[1].src = "/images/01.png";
 let alphaArr = [
   "A",
   "B",
@@ -84,7 +84,7 @@ btns.forEach((btn) => {
 
 let rightAnswersArr = [];
 let wrongAnswersArr = [];
-lives = wrongAnswersArr.length;
+lifes = wrongAnswersArr.length;
 
 function checkIfContains(letter) {
   let letterFound;
@@ -102,15 +102,33 @@ function checkIfContains(letter) {
   });
   if (!letterFound) {
     wrongAnswersArr.push(letter);
-    lives += 1;
-    document.querySelector(".livesLeft > p").innerText = `${lives} left`;
+    lifes += 1;
+    document.querySelector(".lifesLeft > p").innerText = `${lifes} left`;
 
     // correctSound.play();
   }
   if (wrongAnswersArr.length == 1) {
     document.getElementsByClassName("hangman")[1].src = "/images/02.png";
   }
+  if (wrongAnswersArr.length == 2) {
+    document.getElementsByClassName("hangman")[1].src = "/images/03.png";
+  }
+  if (wrongAnswersArr.length == 3) {
+    document.getElementsByClassName("hangman")[1].src = "/images/04.png";
+  }
+  if (wrongAnswersArr.length == 4) {
+    document.getElementsByClassName("hangman")[1].src = "/images/05.png";
+  }
+  if (wrongAnswersArr.length == 5) {
+    document.getElementsByClassName("hangman")[1].src = "/images/06.png";
+  }
+
+  if (wrongAnswersArr.length == 6) {
+    document.getElementsByClassName("hangman")[1].src = "/images/07.png";
+  }
+
   if (wrongAnswersArr.length >= 7) {
+    document.getElementsByClassName("hangman")[1].src = "/images/08.png";
     updateDisplayLose();
   }
   if (rightAnswersArr.length == guessWordLength) {
@@ -122,18 +140,21 @@ function updateDisplayLose() {
   let gameover = "Gameover";
   document.getElementsByClassName("hiddenWord")[0].innerText = gameover;
   document.getElementsByClassName("alphabet")[0].innerHTML =
-    "<img src='/images/hangman.jpg'/>";
-  document.querySelector(".livesLeft > p").innerText = "";
+    "<img src='/images/youlose.jpg'/>";
+  document.querySelector(".lifesLeft > p").innerText = "";
 }
 
 function updateDisplayWin() {
-  let youWin = "You win!";
+  let youWin = "Congrats!";
   document.getElementsByClassName("hiddenWord")[0].innerText = youWin;
+  document.getElementsByClassName("alphabet")[0].innerHTML =
+    "<img src='/images/youwon.jpg'/>";
+  document.querySelector(".lifesLeft > p").innerText = "";
 }
 
 function updateDisplayLives() {
-  let livesTotal = "Lives left";
-  document.getElementsByClassName("livesLeft")[0].innerText = livesTotal;
+  let lifesTotal = "Lifes left";
+  document.getElementsByClassName("lifesLeft")[0].innerText = lifesTotal;
 }
 
 ///Images

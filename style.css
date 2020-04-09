@@ -82,7 +82,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  visibility: hidden;
+  /* visibility: hidden; */
 }
 
 .gameArea {
