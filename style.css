@@ -8,22 +8,10 @@ body {
   text-align: center;
   font-size: 30px;
   background-color: #f0c8c8;
-  /* background: #404040;
-  background-image: url(http://i.stack.imgur.com/TEBeF.gif);
-  font-family: "Mr Dafoe", cursive, "Baskerville Old Face", "Goudy Old Style",
-    Garamond, "Times New Roman", serif;
-  color: #eb219b;
-  height: 100%;
-  text-align: center;
-  font-size: 24px; */
 }
 
-h1 {
-  color: red;
-}
-
-.frontPage {
-  width: 90%;
+.FPDesign {
+  width: 94%;
   height: 550px;
   border: double;
   display: flex;
@@ -31,23 +19,16 @@ h1 {
   justify-content: center;
   align-items: center;
 }
-
-.FPDesign {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: double;
-}
 /* .game_page{
     width: 90%;
     height: 550px;  
+    border: double;
 } */
 
 .hangman {
-  border: double;
   height: 400px;
   width: 300px;
+  margin-left: 50px;
 }
 
 .hiddenWord {
@@ -75,13 +56,11 @@ h1 {
 }
 
 .gamePage {
-  /* width: 90%;
-  height: 550px; */
-  border: double;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: double;
   /* visibility: hidden; */
 }
 
@@ -97,35 +76,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.finalPage {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  border: double;
-}
-
-.finalPageWin {
-  background-image: url("./images/90066.jpg");
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
-  height: 550px;
-  border: double;
-}
-
-.finalPageLose {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
-  height: 550px;
-  border: double;
 }
 
 .active {
@@ -139,8 +90,4 @@ h1 {
 }
 span {
   border: double;
-}
-
-#wrapper div span {
-  height: 100px;
 }

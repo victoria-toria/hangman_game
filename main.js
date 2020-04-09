@@ -7,6 +7,15 @@ let guessWordLength = guessWord.length;
 console.log(guessWordLength);
 let lifes;
 document.getElementsByClassName("hangman")[1].src = "/images/01.png";
+
+document.getElementsByClassName("playBtn").onclick = function () {
+  document.getElementsByClassName("FPDesign")[0].style.visibility = "hidden";
+  document.getElementsByClassName("gameArea")[0].style.visibility = "visible";
+};
+
+console.log(document.getElementsByClassName("playBtn"));
+//
+
 let alphaArr = [
   "A",
   "B",
@@ -103,7 +112,9 @@ function checkIfContains(letter) {
   if (!letterFound) {
     wrongAnswersArr.push(letter);
     lifes += 1;
-    document.querySelector(".lifesLeft > p").innerText = `${lifes} left`;
+    document.querySelector(
+      ".lifesLeft > p"
+    ).innerText = `${lifes} attemt out of 7`;
 
     // correctSound.play();
   }
@@ -137,16 +148,22 @@ function checkIfContains(letter) {
 }
 
 function updateDisplayLose() {
-  let gameover = "Gameover";
-  document.getElementsByClassName("hiddenWord")[0].innerText = gameover;
+  document.getElementsByClassName("hiddenWord")[0].innerText = "";
   document.getElementsByClassName("alphabet")[0].innerHTML =
     "<img src='/images/youlose.jpg'/>";
   document.querySelector(".lifesLeft > p").innerText = "";
+
+  let btn = document.createElement("BUTTON");
+  btn.innerHTML = "Play Again!";
+  document.getElementsByClassName("gameField")[0].appendChild(btn);
+  btn.style.marginBottom = "100px";
+  btn.onclick = function () {
+    window.location.reload();
+  };
 }
 
 function updateDisplayWin() {
-  let youWin = "Congrats!";
-  document.getElementsByClassName("hiddenWord")[0].innerText = youWin;
+  document.getElementsByClassName("hiddenWord")[0].innerText = "";
   document.getElementsByClassName("alphabet")[0].innerHTML =
     "<img src='/images/youwon.jpg'/>";
   document.querySelector(".lifesLeft > p").innerText = "";
@@ -157,33 +174,6 @@ function updateDisplayLives() {
   document.getElementsByClassName("lifesLeft")[0].innerText = lifesTotal;
 }
 
-///Images
+// document.getElementsByClassName("playBtn").onclick = function () {
 
-// for (let i=0; i<imgArray.length;i++){
-// document.getElementsByClassName("hangman").scr = imgArray.scr;
-//}
-
-// let imgArray = new Array();
-// imgArray = imgArray[0] = new Image();
-// imgArray[0].scr = "/images/01.png";
-
-// imgArray[1] = new Image();
-// imgArray[1].src = "/images/02.png";
-
-// imgArray[2] = new Image();
-// imgArray[2].src = "/images/03.png";
-
-// imgArray[3] = new Image();
-// imgArray[3].src = "/images/04.png";
-
-// imgArray[4] = new Image();
-// imgArray[4].src = "/images/05.png";
-
-// imgArray[5] = new Image();
-// imgArray[5].src = "/images/06.png";
-
-// imgArray[6] = new Image();
-// imgArray[6].src = "/images/07.png";
-
-// imgArray[7] = new Image();
-// imgArray[7].src = "/images/08.png";
+//
