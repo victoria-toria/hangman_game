@@ -5,7 +5,7 @@ let wordDiv = document.querySelector(".hiddenWord");
 let guessWord = "JAVASCRIPT";
 let guessWordLength = guessWord.length;
 console.log(guessWordLength);
-let lives = 7;
+let lives;
 
 let alphaArr = [
   "A",
@@ -84,14 +84,13 @@ btns.forEach((btn) => {
 
 let rightAnswersArr = [];
 let wrongAnswersArr = [];
+lives = wrongAnswersArr.length;
 
 function checkIfContains(letter) {
   let letterFound;
-
   guessWord.split("").forEach((elem) => {
     console.log(elem, letter);
     if (elem == letter) {
-      //  console.log(document.getElementsByClassName(letter));
       let nodeEl = document.getElementsByClassName(letter);
       [...nodeEl].forEach((l) => {
         l.classList.remove("ltr");
@@ -103,27 +102,67 @@ function checkIfContains(letter) {
   });
   if (!letterFound) {
     wrongAnswersArr.push(letter);
+    lives += 1;
+    document.querySelector(".livesLeft > p").innerText = `${lives} left`;
+
     // correctSound.play();
   }
-
-  lives = wrongAnswersArr.length;
+  if (wrongAnswersArr.length == 1) {
+    document.getElementsByClassName("hangman")[1].src = "/images/02.png";
+  }
   if (wrongAnswersArr.length >= 7) {
     updateDisplayLose();
-    console.log("Gameover");
   }
   if (rightAnswersArr.length == guessWordLength) {
     updateDisplayWin();
-    console.log("You WIN!");
   }
-  console.log(wrongAnswersArr, rightAnswersArr);
 }
 
 function updateDisplayLose() {
   let gameover = "Gameover";
   document.getElementsByClassName("hiddenWord")[0].innerText = gameover;
+  document.getElementsByClassName("alphabet")[0].innerHTML =
+    "<img src='/images/hangman.jpg'/>";
+  document.querySelector(".livesLeft > p").innerText = "";
 }
 
 function updateDisplayWin() {
   let youWin = "You win!";
   document.getElementsByClassName("hiddenWord")[0].innerText = youWin;
 }
+
+function updateDisplayLives() {
+  let livesTotal = "Lives left";
+  document.getElementsByClassName("livesLeft")[0].innerText = livesTotal;
+}
+
+///Images
+
+// for (let i=0; i<imgArray.length;i++){
+// document.getElementsByClassName("hangman").scr = imgArray.scr;
+//}
+
+// let imgArray = new Array();
+// imgArray = imgArray[0] = new Image();
+// imgArray[0].scr = "/images/01.png";
+
+// imgArray[1] = new Image();
+// imgArray[1].src = "/images/02.png";
+
+// imgArray[2] = new Image();
+// imgArray[2].src = "/images/03.png";
+
+// imgArray[3] = new Image();
+// imgArray[3].src = "/images/04.png";
+
+// imgArray[4] = new Image();
+// imgArray[4].src = "/images/05.png";
+
+// imgArray[5] = new Image();
+// imgArray[5].src = "/images/06.png";
+
+// imgArray[6] = new Image();
+// imgArray[6].src = "/images/07.png";
+
+// imgArray[7] = new Image();
+// imgArray[7].src = "/images/08.png";

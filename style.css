@@ -56,6 +56,11 @@ h1 {
   display: flex;
   justify-content: space-evenly;
 }
+.livesLeft {
+  width: 300px;
+  height: 100 px;
+  display: flex;
+}
 
 .alphabet {
   display: flex;
@@ -77,6 +82,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  visibility: hidden;
 }
 
 .gameArea {
