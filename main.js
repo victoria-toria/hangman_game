@@ -4,16 +4,16 @@ let alphabetDiv = document.querySelector(".alphabet");
 let wordDiv = document.querySelector(".hiddenWord");
 let guessWord = "JAVASCRIPT";
 let guessWordLength = guessWord.length;
-console.log(guessWordLength);
+document.getElementsByClassName("gameArea")[0].style.display = "none";
 let lifes;
 document.getElementsByClassName("hangman")[1].src = "/images/01.png";
 
-document.getElementsByClassName("playBtn").onclick = function () {
-  document.getElementsByClassName("FPDesign")[0].style.visibility = "hidden";
-  document.getElementsByClassName("gameArea")[0].style.visibility = "visible";
+document.getElementsByClassName("playBtn")[0].onclick = function () {
+  document.getElementsByClassName("FPDesign")[0].style.display = "none";
+  document.getElementsByClassName("gameArea")[0].style.display = "flex";
 };
 
-console.log(document.getElementsByClassName("playBtn"));
+console.log(document.getElementsByClassName("playBtn")[0]);
 //
 
 let alphaArr = [
