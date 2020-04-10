@@ -6,7 +6,7 @@ let guessWord = "JAVASCRIPT";
 let guessWordLength = guessWord.length;
 document.getElementsByClassName("gameArea")[0].style.display = "none";
 let lifes;
-document.getElementsByClassName("hangman")[1].src = "/images/01.png";
+document.getElementsByClassName("hangman")[1].src = "./images/01.png";
 
 document.getElementsByClassName("playBtn")[0].onclick = function () {
   document.getElementsByClassName("FPDesign")[0].style.display = "none";
@@ -119,27 +119,27 @@ function checkIfContains(letter) {
     // correctSound.play();
   }
   if (wrongAnswersArr.length == 1) {
-    document.getElementsByClassName("hangman")[1].src = "/images/02.png";
+    document.getElementsByClassName("hangman")[1].src = "./images/02.png";
   }
   if (wrongAnswersArr.length == 2) {
-    document.getElementsByClassName("hangman")[1].src = "/images/03.png";
+    document.getElementsByClassName("hangman")[1].src = "./images/03.png";
   }
   if (wrongAnswersArr.length == 3) {
-    document.getElementsByClassName("hangman")[1].src = "/images/04.png";
+    document.getElementsByClassName("hangman")[1].src = "./images/04.png";
   }
   if (wrongAnswersArr.length == 4) {
-    document.getElementsByClassName("hangman")[1].src = "/images/05.png";
+    document.getElementsByClassName("hangman")[1].src = "./images/05.png";
   }
   if (wrongAnswersArr.length == 5) {
-    document.getElementsByClassName("hangman")[1].src = "/images/06.png";
+    document.getElementsByClassName("hangman")[1].src = "./images/06.png";
   }
 
   if (wrongAnswersArr.length == 6) {
-    document.getElementsByClassName("hangman")[1].src = "/images/07.png";
+    document.getElementsByClassName("hangman")[1].src = "./images/07.png";
   }
 
   if (wrongAnswersArr.length >= 7) {
-    document.getElementsByClassName("hangman")[1].src = "/images/08.png";
+    document.getElementsByClassName("hangman")[1].src = "./images/08.png";
     updateDisplayLose();
   }
   if (rightAnswersArr.length == guessWordLength) {
