@@ -11,9 +11,9 @@ document.getElementsByClassName("hangman")[1].src = "./images/01.png";
 document.getElementsByClassName("playBtn")[0].onclick = function () {
   document.getElementsByClassName("FPDesign")[0].style.display = "none";
   document.getElementsByClassName("gameArea")[0].style.display = "flex";
+  buttonSound.play();
 };
 
-console.log(document.getElementsByClassName("playBtn")[0]);
 //
 
 let alphaArr = [
@@ -46,9 +46,10 @@ let alphaArr = [
 ];
 
 let correctSound = document.createElement("audio");
-let incorrectSound = document.createElement("audio");
 correctSound.setAttribute("src", "./sounds/Spring-Boing.mp3");
-incorrectSound.setAttribute("src", "./sounds/Spring-Boing.mp3");
+
+let buttonSound = document.createElement("audio");
+buttonSound.setAttribute("src", "./sounds/Meowing-cat-sound.mp3");
 
 function createBtn(letter) {
   let btn = document.createElement("button");
@@ -157,6 +158,7 @@ function updateDisplayLose() {
   btn.innerHTML = "Play Again!";
   document.getElementsByClassName("gameField")[0].appendChild(btn);
   btn.style.marginBottom = "100px";
+  btn.style.padding = "12px 28px";
   btn.onclick = function () {
     window.location.reload();
   };
@@ -167,6 +169,14 @@ function updateDisplayWin() {
   document.getElementsByClassName("alphabet")[0].innerHTML =
     "<img src='./images/youwon.jpg'/>";
   document.querySelector(".lifesLeft > p").innerText = "";
+  let btn = document.createElement("BUTTON");
+  btn.innerHTML = "Play Again!";
+  document.getElementsByClassName("gameField")[0].appendChild(btn);
+  btn.style.marginBottom = "100px";
+  btn.style.padding = "12px 28px";
+  btn.onclick = function () {
+    window.location.reload();
+  };
 }
 
 function updateDisplayLives() {

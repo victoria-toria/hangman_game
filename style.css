@@ -84,6 +84,7 @@ body {
 
 .active {
   color: red;
+  background-color: #c0dcdc;
   top: 5px;
   box-shadow: none;
 }
@@ -93,4 +94,19 @@ body {
 }
 span {
   border: double;
+}
+
+button {
+  border-radius: 12px;
+  background-color: #c0dcdc;
+  color: rgb(0, 8, 14);
+  border-color: black;
+}
+
+.playBtn {
+  padding: 12px 28px;
+}
+
+span {
+  background-color: #dcdcc0;
 }
