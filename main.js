@@ -45,10 +45,10 @@ let alphaArr = [
   "Z",
 ];
 
-// let correctSound = document.createElement("audio");
-// let incorrectSound = document.createElement("audio");
-// correctSound.setAttribute("src", "/sounds/CAR-DOOR.mp3");
-// incorrectSound.setAttribute("src", "/sounds/CAR-DOOR.mp3");
+let correctSound = document.createElement("audio");
+let incorrectSound = document.createElement("audio");
+correctSound.setAttribute("src", "./sounds/Spring-Boing.mp3");
+incorrectSound.setAttribute("src", "./sounds/Spring-Boing.mp3");
 
 function createBtn(letter) {
   let btn = document.createElement("button");
@@ -103,7 +103,7 @@ function checkIfContains(letter) {
       let nodeEl = document.getElementsByClassName(letter);
       [...nodeEl].forEach((l) => {
         l.classList.remove("ltr");
-        // correctSound.play();
+        correctSound.play();
       });
       letterFound = true;
       rightAnswersArr.push(elem);
@@ -116,7 +116,7 @@ function checkIfContains(letter) {
       ".lifesLeft > p"
     ).innerText = `${lifes} attemt out of 7`;
 
-    // correctSound.play();
+    correctSound.play();
   }
   if (wrongAnswersArr.length == 1) {
     document.getElementsByClassName("hangman")[1].src = "./images/02.png";
@@ -173,7 +173,3 @@ function updateDisplayLives() {
   let lifesTotal = "Lifes left";
   document.getElementsByClassName("lifesLeft")[0].innerText = lifesTotal;
 }
-
-// document.getElementsByClassName("playBtn").onclick = function () {
-
-//
