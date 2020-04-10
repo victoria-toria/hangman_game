@@ -150,7 +150,7 @@ function checkIfContains(letter) {
 function updateDisplayLose() {
   document.getElementsByClassName("hiddenWord")[0].innerText = "";
   document.getElementsByClassName("alphabet")[0].innerHTML =
-    "<img src='/images/youlose.jpg'/>";
+    "<img src='./images/youlose.jpg'/>";
   document.querySelector(".lifesLeft > p").innerText = "";
 
   let btn = document.createElement("BUTTON");
@@ -165,7 +165,7 @@ function updateDisplayLose() {
 function updateDisplayWin() {
   document.getElementsByClassName("hiddenWord")[0].innerText = "";
   document.getElementsByClassName("alphabet")[0].innerHTML =
-    "<img src='/images/youwon.jpg'/>";
+    "<img src='./images/youwon.jpg'/>";
   document.querySelector(".lifesLeft > p").innerText = "";
 }
 
